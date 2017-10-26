@@ -16,6 +16,7 @@ public class Konto {
 
 	public Konto() {
 		penge = startBeløb;
+		pengeCheck();
 		// TODO Auto-generated method stub
 
 	}
@@ -23,15 +24,17 @@ public class Konto {
 	// under 0 ændres den til 0
 
 	public void setPenge(int penge) {
-		if (pengeCheck(penge, this.penge))
-			this.penge += penge;
-		else
-			this.penge = 0;
+
+		this.penge += penge;
+		pengeCheck();
 
 	}
 
-	private boolean pengeCheck(int pænge, int nytBeløb) {
-		return pænge + nytBeløb > 0;
+	// sætter penge til 0 hvis den er under 0, kald denne metode efter alle
+	// ændringer i en spillers penge
+	private void pengeCheck() {
+		if (this.penge < 0)
+			this.penge = 0;
 	}
 
 }
