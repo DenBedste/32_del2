@@ -1,3 +1,4 @@
+package cdio2_game;
 /**
  * 
  */
@@ -14,7 +15,7 @@ public class Account {
 	 */
 	// constructor, sætter spillerens penge til startbeløbet som næmt kan ændres
 
-	public account() {
+	public Account() {
 		Balance = defaultBalance;
 		balanceCheck();
 		// TODO Auto-generated method stub
