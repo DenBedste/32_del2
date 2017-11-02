@@ -24,9 +24,9 @@ public class Account {
 	// setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
 	// under 0 ændres den til 0
 
-	public void addBalance(int penge) {
+	public void addBalance(int value) {
 
-		this.Balance += Balance;
+		Balance += value;
 		balanceCheck();
 
 	}
@@ -34,8 +34,12 @@ public class Account {
 	// sætter penge til 0 hvis den er under 0, kald denne metode efter alle
 	// ændringer i en spillers penge
 	private void balanceCheck() {
-		if (this.Balance < 0)
-			this.Balance = 0;
+		if (Balance < 0)
+			Balance = 0;
 	}
 
+	public int getBalance() {
+		return Balance;
+
+	}
 }
