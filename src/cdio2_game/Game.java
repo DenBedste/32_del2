@@ -1,8 +1,19 @@
 package cdio2_game;
 
 public class Game {
+	
+String FieldDesc;
+	
+public Game() {
+}
 
-	public static void main(String[] args) {
+public void playing() {
+}
 
-	}
+public String field() {
+	return FieldDesc;
+}
+public void PlayerRegistration() {
+}
+
 }
