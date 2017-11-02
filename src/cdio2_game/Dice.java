@@ -1,13 +1,13 @@
-package spil;
+package cdio2_game;
 
 import java.util.Random;
 
-public class dice {
+public class Dice {
 	private Random rand1, rand2;
 	private int diceface1, diceface2; 
 
 	//	constructor of the class Terninger
-	public dice(){
+	public Dice(){
 		rand1 = new Random();
 		rand2 = new Random();
 		roll();
