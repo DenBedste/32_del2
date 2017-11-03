@@ -9,4 +9,5 @@ public class Player extends Account {
     name = playerName;
     playerAccount = Balance;
   }
+  
 }
