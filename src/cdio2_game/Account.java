@@ -1,7 +1,4 @@
 package cdio2_game;
-/**
- * 
- */
 
 /**
  * @author Stonecore
@@ -28,7 +25,7 @@ public class Account {
 	// setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
 	// under 0 ændres den til 0
 
-	public void addBalance(int Balance) {
+	public void addToBalance(int Balance) {
 
 		this.Balance += Balance;
 		balanceCheck();
