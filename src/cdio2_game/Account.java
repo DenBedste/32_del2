@@ -15,16 +15,20 @@ public class Account {
 	 */
 	// constructor, sætter spillerens penge til startbeløbet som næmt kan ændres
 
-	public Account() {
-		Balance = defaultBalance;
+	public Account(int Balance) {
+		this.Balance = defaultBalance;
 		balanceCheck();
-		// TODO Auto-generated method stub
 
 	}
+	// retunere balancen i kontoen
+	public int getBalance() {
+		return Balance;
+	}
+
 	// setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
 	// under 0 ændres den til 0
 
-	public void addBalance(int penge) {
+	public void addBalance(int Balance) {
 
 		this.Balance += Balance;
 		balanceCheck();
@@ -36,6 +40,9 @@ public class Account {
 	private void balanceCheck() {
 		if (this.Balance < 0)
 			this.Balance = 0;
+	}
+	public String toString() {
+		return  Balance + "";
 	}
 
 }
