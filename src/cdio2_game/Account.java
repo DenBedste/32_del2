@@ -49,4 +49,8 @@ public class Account {
 		return Balance;
 
 	}
+	
+	public String toString() {
+		return  Balance + "";
+	}
 }
