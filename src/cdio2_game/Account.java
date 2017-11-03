@@ -21,8 +21,13 @@ public class Account {
 		// TODO Auto-generated method stub
 
 	}
-	// setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
-	// under 0 ændres den til 0
+
+	/**
+	 * setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
+	 * under 0 ændres den til 0
+	 * 
+	 * @param value
+	 */
 
 	public void addBalance(int value) {
 
@@ -31,8 +36,10 @@ public class Account {
 
 	}
 
-	// sætter penge til 0 hvis den er under 0, kald denne metode efter alle
-	// ændringer i en spillers penge
+	/**
+	 * sætter penge til 0 hvis den er under 0, kald denne metode efter alle
+	 * ændringer i en spillers penge
+	 */
 	private void balanceCheck() {
 		if (Balance < 0)
 			Balance = 0;

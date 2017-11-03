@@ -12,7 +12,9 @@ public class Game {
 	public Game() {
 	}
 
-	// 
+	/**
+	 *  
+	 */
 	private void playerRegistration() {
 	}
 	

@@ -6,14 +6,18 @@ public class Cup {
 	private Random rand1, rand2;
 	private int diceface1, diceface2; 
 
-	//	constructor of the class Terninger
+	/**
+	 * 	constructor of the class Terninger
+	 */
 	public Cup(){
 		rand1 = new Random();
 		rand2 = new Random();
 		roll();
 	}
 
-	// roll the die and return the value (1-6)
+	/**
+	 *  roll the die and return the value (1-6)
+	 */
 	public void roll() {
 		diceface1 = rand1.nextInt(6)+1;
 		diceface2 = rand2.nextInt(6)+1;
