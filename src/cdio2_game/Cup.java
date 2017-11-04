@@ -3,43 +3,28 @@ package cdio2_game;
 import java.util.Random;
 
 public class Cup {
-	private Random rand1, rand2;
-	private int diceface1, diceface2; 
+	private int[] eyes = new int[3];
+	private int sides;
 
 	/**
-	 * 	constructor of the class Terninger
+	 * 	constructor of the class Cup
 	 */
 	public Cup(){
-		rand1 = new Random();
-		rand2 = new Random();
-		roll();
+		
 	}
-
 	/**
-	 *  roll the die and return the value (1-6)
+	 * 
 	 */
-	public void roll() {
-		diceface1 = rand1.nextInt(6)+1;
-		diceface2 = rand2.nextInt(6)+1;
-
+	
+	public int rollCup() {
+		
 	}
-	public int getSum() {
-		return diceface1 + diceface2;
-	}
-	public boolean getEns() {
-		return diceface1 == diceface2;
+	
+	public int getEyes(int number) {
+		return eyes[number];
 	}
 
-	public int getDiceface1() {
-		return diceface1;
-	}
-
-	public int getDiceface2() {
-		return diceface2;
-	}
-
-	public void setDice(int diceface1, int diceface2){
-		this.diceface1 = diceface1;
-		this.diceface2 = diceface2;
+	private void Dice() {
+		
 	}
 }
