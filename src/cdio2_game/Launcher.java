@@ -18,8 +18,7 @@ public class Launcher {
 		System.out.println(res.getString("Tower"));
 
 		Player player1, player2;
-		Account account1;
-		Account account2;
+		Account account1, account2;
 		String Name;
 		
 		Scanner sc = new Scanner(System.in);	
