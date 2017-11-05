@@ -4,15 +4,14 @@ public class Account {
 	int Balance, defaultBalance = 1000;
 
 	/**
-	 * 
+	 * Constructor
 	 */
 	public Account() {
 		Balance = defaultBalance;
 	}
 
 	/**
-	 * sætter penge til 0 hvis den er under 0, kald denne metode efter alle
-	 * ændringer i en spillers penge
+	 * make sure the balance is not negative
 	 */
 	private void balanceCheck() {
 		if (Balance < 0)
@@ -20,8 +19,6 @@ public class Account {
 	}
 	
 	/**
-	 * setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
-	 * under 0 ændres den til 0
 	 * @param value
 	 */
 	public void addBalance(int value) {
