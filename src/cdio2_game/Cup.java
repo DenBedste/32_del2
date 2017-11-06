@@ -12,7 +12,7 @@ public class Cup {
 	 * 	constructor of the class Cup
 	 */
 	public Cup(){
-
+		
 	}
 	/**
 	 * Method that rolls a die and returns the value
@@ -42,7 +42,7 @@ public class Cup {
 	/**
 	 * Return a number based on what input is placed instead of "number"
 	 */
-	public int getEyes(int number) {
-		return eyes[number];
+	public int getEyes(int eyes) {
+		return this.eyes[eyes];
 	}
 }
