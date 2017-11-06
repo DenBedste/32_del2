@@ -10,16 +10,18 @@ public class Account {
 	// constructor, sÃ¦tter spillerens penge til startbelÃ¸bet som nÃ¦mt kan Ã¦ndres
 
 	public Account() {
-		this.Balance = defaultBalance;
+		Balance = defaultBalance;
 		balanceCheck();
 
 	}
+
 	// retunere balancen i kontoen
 	public int getBalance() {
 		return Balance;
 	}
 
-	// setPenge tilfÃ¸jer en int vÃ¦rdi til spilleren penge, hvis slutvÃ¦rdien bliver
+	// setPenge tilfÃ¸jer en int vÃ¦rdi til spilleren penge, hvis slutvÃ¦rdien
+	// bliver
 	// under 0 Ã¦ndres den til 0
 
 	public void addBalance(int Balance) {
