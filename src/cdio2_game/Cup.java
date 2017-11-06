@@ -41,7 +41,8 @@ public class Cup {
 
 	}
 	/**
-	 * Return a number based on what input is placed instead of "number"
+	 * Returns a number based on what input is placed instead of "dies".
+	 * 0 returns the sum of all die rolls and 1 to eyes.length-1 returns a specific die value.
 	 */
 	public int getEyes(int dies) {
 		return eyes[dies];
