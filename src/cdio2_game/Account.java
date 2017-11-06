@@ -1,4 +1,14 @@
 package cdio2_game;
+/**
+ * This class handles the players' account and its balance.
+ * This includes:
+ * Initinating a balance with a value. (Constructor).
+ * Returning the balance (int).
+ * Setting the balance to 0, if balance < 0. (void).
+ * Adding/Subtracting from the balance (void).
+ * 
+ * Called from the class "Player".
+ */
 
 public class Account {
 	/**
@@ -8,7 +18,7 @@ public class Account {
 
 	/**
 	 * Constructor
-	 * The default value is made into the (Account) Balance. and a balancecheck (line 24-25) is made.
+	 * The default value is made into the (Account) Balance. and a the method balanceCheck() is run.
 	 */
 
 	public Account() {
@@ -33,8 +43,8 @@ public class Account {
 	}
 	
 	/**
-	 * Method that add a value to the balance to the current balance
-	 * Afterwards a balancecheck (line 24-25) is made.
+	 * Method that adds a value to the balance to the current balance
+	 * Afterwards the method balanceCheck() is run.
 	 */
 	public void addBalance(int Balance) {
 		this.Balance += Balance;

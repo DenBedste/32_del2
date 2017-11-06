@@ -1,4 +1,14 @@
 package cdio2_game;
+/**
+ * This class handles the cup and the die/dice in it. 
+ * This includes:
+ * Initinating an array with a sum and "m" dice. Initinating a die with "n" sides.
+ * Reseting the cup. (Constructor).
+ * Rolling a die. (int).
+ * Rolling a cup and return the sum of all dice. (int).
+ * 
+ * Called from the class "Game".
+ */
 
 public class Cup {
 	/**
@@ -41,7 +51,7 @@ public class Cup {
 
 	}
 	/**
-	 * Returns a number based on what input is placed instead of "dies".
+	 * Method that returns the faceupvalue on the die in the eyes["dies"] array .
 	 * 0 returns the sum of all die rolls and 1 to eyes.length-1 returns a specific die value.
 	 */
 	public int getEyes(int dies) {
