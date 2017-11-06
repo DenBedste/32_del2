@@ -1,36 +1,29 @@
 package cdio2_game;
 
 public class Account {
+	
+	// creating an instance variables
 	int Balance, defaultBalance = 1000;
 
-	/**
-	 * Constructor
-	 */
-
-	// constructor, sÃ¦tter spillerens penge til startbelÃ¸bet som nÃ¦mt kan Ã¦ndres
-
+	// the constructor of the Class 
 	public Account() {
 		Balance = defaultBalance;
 		balanceCheck();
 
 	}
 
-	// retunere balancen i kontoen
+	// returns the money in the account
 	public int getBalance() {
 		return Balance;
 	}
 
-	// setPenge tilfÃ¸jer en int vÃ¦rdi til spilleren penge, hvis slutvÃ¦rdien
-	// bliver
-	// under 0 Ã¦ndres den til 0
-
+	
 	public void addBalance(int Balance) {
 		this.Balance += Balance;
 		balanceCheck();
 	}
 
-	// sÃ¦tter penge til 0 hvis den er under 0, kald denne metode efter alle
-	// Ã¦ndringer i en spillers penge
+	// if the money became negative return it to zero
 	private void balanceCheck() {
 		if (this.Balance < 0)
 			this.Balance = 0;
