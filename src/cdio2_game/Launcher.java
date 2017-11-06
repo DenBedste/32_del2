@@ -11,7 +11,7 @@ public class Launcher {
 	static Game game;
 
 	public static void main(String[] args) {
-	game = new Game();
-	game.gameExecute();
+		game = new Game();
+		game.gameExecute();
 	}
 }
