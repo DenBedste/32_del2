@@ -3,9 +3,6 @@ package cdio2_game;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-import cdio2Game.Cup;
-import cdio2Game.Player;
-
 public class Game {
 	private int[] fieldVal = new int[] { 250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650 };
 	private ResourceBundle res;
