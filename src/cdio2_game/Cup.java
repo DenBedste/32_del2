@@ -1,5 +1,6 @@
 package cdio2_game;
 
+
 import java.util.Random;
 
 public class Cup {
@@ -51,3 +52,4 @@ public class Cup {
 		return "( " + eyes[0] + " + " + eyes[1] + " ) = " + eyes[2] + ".";
 	}
 }
+

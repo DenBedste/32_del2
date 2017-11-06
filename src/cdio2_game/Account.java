@@ -1,36 +1,42 @@
 package cdio2_game;
 
 public class Account {
-	int Balance, defaultBalance = 1000;
+	int balance, defaultBalance = 1000;
 
 	/**
 	 * Constructor
 	 */
-	public Account() {
-		Balance = defaultBalance;
+
+	// constructor, sætter spillerens penge til startbeløbet som næmt kan ændres
+
+	public Account(int balance) {
+		this.balance = defaultBalance;
+		balanceCheck();
+
+	}
+	// retunere balancen i kontoen
+	public int getBalance() {
+		return balance;
 	}
 
-	/**
-	 * make sure the balance is not negative
-	 */
-	private void balanceCheck() {
-		if (Balance < 0)
-			Balance = 0;
-	}
-	
-	/**
-	 * @param value
-	 */
-	public void addBalance(int value) {
-		Balance += value;
+	// setPenge tilføjer en int værdi til spilleren penge, hvis slutværdien bliver
+	// under 0 ændres den til 0
+
+	public void addToBalance(int Balance) {
+		this.balance += balance;
 		balanceCheck();
 	}
 
-	/**
-	 * 
-	 */
-	public int getBalance() {
-		return Balance;
+	// sætter penge til 0 hvis den er under 0, kald denne metode efter alle
+	// ændringer i en spillers penge
+	private void balanceCheck() {
+		if (this.balance < 0)
+			this.balance = 0;
+	}
+	
+	public String toString() {
+		return  balance + "";
+
 	}
 
 }
