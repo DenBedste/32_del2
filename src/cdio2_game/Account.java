@@ -1,15 +1,12 @@
 package cdio2_game;
 
-/**
- * @author Stonecore
- *
- */
 public class Account {
 	int balance, defaultBalance = 1000;
 
 	/**
-	 * @param args
+	 * Constructor
 	 */
+
 	// constructor, sætter spillerens penge til startbeløbet som næmt kan ændres
 
 	public Account(int balance) {
@@ -39,6 +36,7 @@ public class Account {
 	
 	public String toString() {
 		return  balance + "";
+
 	}
 
 }

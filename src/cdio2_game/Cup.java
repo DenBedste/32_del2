@@ -1,47 +1,55 @@
 package cdio2_game;
 
+
+import java.util.Random;
+
 public class Cup {
-	// creating two objects of type Random represents the two dices
-	private Dice dice1,dice2;
-
-	// the Class constructor
-	public Cup(int max) {
-		// initializing the dices value
-		dice1 = new Dice(max);
-		dice2 = new Dice(max);
+	private int[] eyes = new int[3];
+	private Random dice1,dice2;
+	private int sides;
+	
+	/**
+	 * 
+	 * @param sides
+	 */
+	public Cup(int sides){
+		this.sides = sides;
+		dice1 = new Random();
+		dice2 = new Random();
 	}
 
-	// rolls the dices and return the sum of the two faces
-	public void roll() {
-		dice1.roll();
-		dice2.roll();
+	/**
+	 * 
+	 * @return
+	 */
+	public int rollCup() {
+		rollDices();
+		eyes[2] = eyes[0] + eyes[1];
+		return eyes[2];
+	}
+	
+	/**
+	 * 
+	 * @param number
+	 * @return
+	 */
+	public int getEyes(int number) {
+		return eyes[number];
 	}
 
-	// returns the first dice face value
-	public int get1stDiceFace() {
-		return dice1.getDiceFace();
+	/**
+	 * 
+	 */
+	private void rollDices() {
+		eyes[0] = dice1.nextInt(sides) + 1;
+		eyes[1] = dice2.nextInt(sides) + 1;
 	}
 
-	// returns the second dice face value
-	public int get2ndDiceFace() {
-		return dice2.getDiceFace();
-	}
-
-	// returns the Sum of the two dice faces value
-	public int getDicesSum() {
-		return dice1.getDiceFace() + dice2.getDiceFace();
-	}
-
-	// sets the max value of the dices
-	public void setMax(int max) {
-		dice1.setMax(max);
-		dice2.setMax(max);
-	}
-
-	// returns the string that represents the Dices values
+	/**
+	 * 
+	 */
 	public String toString() {
-		return "( " + dice1.getDiceFace() + " + " + dice2.getDiceFace() + " ) = " + getDicesSum() + ".";
+		return "( " + eyes[0] + " + " + eyes[1] + " ) = " + eyes[2] + ".";
 	}
 }
-
 

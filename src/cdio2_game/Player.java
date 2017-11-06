@@ -1,5 +1,6 @@
 package cdio2_game;
 
+
 public class Player {
 // Creating a String obj represents the player name
 		private String name;
@@ -38,5 +39,6 @@ public class Player {
 			return name + "\t" + playerAccount + ".";
 		}
 	}
+
 
 
