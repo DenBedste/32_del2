@@ -6,6 +6,7 @@ public class Player {
 		private String name;
 		// creating an int variable represents the player money account
 		private Account playerAccount;
+		public int balance;
 /**
  * 
  * @param name
