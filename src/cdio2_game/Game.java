@@ -88,28 +88,36 @@ public class Game {
 			System.out.println(player[i].getName() + " " + res.getString("init_roll"));
 			sc.nextLine();
 			cup.rollCup();
+			player[i].addBalance(fieldVal[cup.getEyes(0) - 2]);
+			
 			System.out.println(player[i].getName() + " " + res.getString("rollPrint1") + " " + cup.getEyes(0) + " "
 					+ res.getString("rollPrint2") + " " + cup.getEyes(1) + " " + res.getString("rollPrint3") + " "
 					+ cup.getEyes(2) + " " + res.getString("rollPrint4") + " "
 					+ res.getString("field" + cup.getEyes(0) + "name"));
-			player[i].addBalance(fieldVal[cup.getEyes(0) - 2]);
 			System.out.println(res.getString("field" + cup.getEyes(0) + "text"));
+			
+			
 			if (fieldVal[cup.getEyes(0) - 2] > 0) {
-				System.out.println(res.getString("balance_Change_Positive") + " " + fieldVal[cup.getEyes(0) - 2]);
+				System.out.println(res.getString("balance_Change_Positive") + 
+									" " + fieldVal[cup.getEyes(0) - 2]);
 			} else if (fieldVal[cup.getEyes(0) - 2] < 0) {
-				System.out.println(
-						res.getString("balance_Change_Negative") + " " + Math.abs(fieldVal[cup.getEyes(0) - 2]));
-			} else {
-				System.out.println(res.getString("balance_Change_none"));
-			}
+				System.out.println(res.getString("balance_Change_Negative") +
+									" " + Math.abs(fieldVal[cup.getEyes(0) - 2]));
+			} 
+			
+			else { System.out.println(res.getString("balance_Change_none"));}
+			
 			if (fieldVal[cup.getEyes(0) - 2] != 0)
 				System.out.println(player[i].getName() + res.getString("new_Balance") + " " + player[i].getBalance());
+			
 			if (player[i].getBalance() > 3000)
 				break;
 
 			if (i > player.length - 1)
 				i = 0;
-		} while (player[i].winner() == false || player[i].winner() == true);
+		} 
+		
+		while (player[i].winner() == false || player[i].winner() == true);
 		System.out.println(player[i].getName() + " " + res.getString("winMSG1") + " " + player[i].getBalance() + " "
 				+ res.getString("winMSG2"));
 	}
