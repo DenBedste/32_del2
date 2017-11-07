@@ -1,7 +1,7 @@
 package cdio2_game;
 
 /**
- * This class handles the players and works as the link between the classes "Game" and "Account". 
+ * This class handles the players and works as the controller between the classes "Game" and "Account". 
  * This includes:
  * Initinating an array with a sum and "m" dice. Initinating a die with "n" sides.
  * Reseting the cup. (Constructor).

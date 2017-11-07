@@ -19,7 +19,8 @@ public class Cup {
 	private int sides = 6;
 
 	/**
-	 * 	constructor of the class Cup
+	 * 	Constructor
+	 * 
 	 */
 	public Cup(){
 		for (int i = 0; i < eyes.length; i++)
@@ -38,7 +39,7 @@ public class Cup {
 	/**
 	 * Method that rolls a number of dice and returns the sum of all dice.
 	 * eyes[0] is the place in the array that contains the total sum. Set to 0, to wipe previous sum.
-	 * I a for-loop all dice are rolled one at a time and their value is added to the total.
+	 * In a for-loop all dice are rolled one at a time, and their value is added to the total sum.
 	 * The total is then returned.
 	 */
 	public int rollCup() {

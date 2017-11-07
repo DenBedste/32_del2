@@ -12,7 +12,7 @@ package cdio2_game;
 
 public class Account {
 	/**
-	 * Initiates a balance and makes a default value;
+	 * Establises a balance and makes a default value;
 	 */
 	int Balance, defaultBalance = 1000;
 
