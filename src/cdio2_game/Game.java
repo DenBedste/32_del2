@@ -41,8 +41,8 @@ public class Game {
 	 *  The while-loop closes the game while the "end" String becomes "exit"
 	 */
 	public void gameExecute() {
-		res = ResourceBundle.getBundle("localisation.MessegesBundle");
-		System.out.println(res.getString("welcomeMessege"));
+		res = ResourceBundle.getBundle("localisation.MessagesBundle");
+		System.out.println(res.getString("welcomeMessage"));
 
 		sc = new Scanner(System.in);
 		playerRegistration();
@@ -61,7 +61,7 @@ public class Game {
 
 	/**
 	 * Method that creates the players and their account from the constructor of the "Player" class.
-	 * A for-loop is run until the number of players is equal to the length of the player array.
+	 * A for-loop is run to register all the players into the array.
 	 * Everytime the loop loops a player is created, and the player can insert a name with the player.setName method.
 	 */
 	private void playerRegistration() {
@@ -74,7 +74,15 @@ public class Game {
 	/**
 	 * Initinates the int i to -1.
 	 * A do-while-loop is run until a player has been declared the winner.
-	 * 
+	 * The first 2 if statements checks for the rule of getting an extra throw by rolling 8 with the dice.
+	 * With the print "init_roll" the player is told to roll the dice by pressing enter.
+	 * The player's Balance is then changed according to the rolled sum. The -2 is due to the fieldarray starting from index 0 and not index 2.
+	 * The player is then informed about what the player rolled and what field they landed on.
+	 * The game then checks (if (fieldVal...) else if(...) else)), if the balance change was positive, negative or non-existing.
+	 * if (fieldVal[cup.getEyes(0) - 2] != 0). Not sure.
+	 * if (player[i].getBalance() > 3000), break out of the do-while if a player has won.
+	 * if (i > player.length - 1), makes the game loop from player 2 to player 1.
+	 * The while statement returns a message for the winning player with their score.
 	 */
 	private void Playing() {
 		i = -1;
