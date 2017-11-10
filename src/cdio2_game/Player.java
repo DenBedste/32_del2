@@ -1,7 +1,7 @@
 package cdio2_game;
 
 /**
- * This class handles the players and works as the link between the classes "Game" and "Account". 
+ * This class handles the players and works as the controller between the classes "Game" and "Account". 
  * This includes:
  * Initinating an array with a sum and "m" dice. Initinating a die with "n" sides.
  * Reseting the cup. (Constructor).
@@ -45,6 +45,7 @@ public class Player {
 	}
 
 	/**
+	 * Returns the Balance from the class "Account".
 	 * Method that calls the "addBalance" method from the class "Account" that adds a value to the current balance.
 	 * "addBalance" also runs the method account.balanceCheck.
 	 * Necessary to get a low coupling, because Account only have to be called in "Player", instead of in "Player" and "Game".
@@ -54,15 +55,15 @@ public class Player {
 	}
 
 	/**
-	 * Method that lets the player set their playername.
+	 * Sets the player's name to the input given by the player.
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	
 	/**
-	 * Method that checks if a player has won the game by getting 3000 or more money in their account.
-	 * Returns false until a player has won the game, then the method returns true
+	 * Method that returns true is a player have won the game by having a score of 3000 or more.
+	 * otherwise the method returns false.
 	 */
 	public boolean winner() {
 		if (account.getBalance() >= 3000)
