@@ -1,9 +1,11 @@
-package cdio2_game;
+package junittest;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import cdio2_game.Account;
 
 public class TestBalance {
 	Account test;

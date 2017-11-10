@@ -58,4 +58,8 @@ public class Cup {
 	public int getEyes(int dies) {
 		return eyes[dies];
 	}
+	public int getSides() {
+		// TODO Auto-generated method stub
+		return sides;
+	}
 }
