@@ -27,41 +27,14 @@ class CupTest {
 		errorRoof = 2; // we guarantee 2% error roof with testrolls above 10000. 1% will mostly be true
 						// too, but no guaranteed.
 		cdio2_game.Cup test = new cdio2_game.Cup();
-		System.out.println(test.rollCup());
-		System.out.println(test.getEyes(1));
-		System.out.println(test.getEyes(2));
 		diceSides = test.getSides();
 		testRolls = testRolls * diceSides;
 		int[][] result = new int[3][];
 		double[] expected_val = new double[diceSides * 2 - 1];
-		// for (int i = 0; i < expected_val.length; i++)
-		// expected_val[i] = 0;
-		for (int i = 0; i < diceSides; i++)
-			for (int j = 0; j < diceSides; j++) {
-				expected_val[i + j] += 100 / Math.pow(diceSides, 2);
-			}
+		expected_calc(expected_val);
 		result[0] = new int[diceSides * 2 - 1];
-		for (int i = 1; i < result.length; i++) {
-			result[i] = new int[diceSides];
-			for (@SuppressWarnings("unused")
-			int j : result[i]) // warning suppressed as calling the loop will initialise result [i][j] so there
-								// is no need to actually "use" j.
-				;
-
-		}
-		// expected_val = new double[] { 2.8, 5.diceSides, 8.3, 11.1, 13.9,
-		// 1diceSides.7, 13.9, 11.1,
-		// 8.3, diceSides.5, 2.8 };
-
-		// int[] d1Result = new int[] { 0, 0, 0, 0, 0, 0 }, d2Result = new int[] { 0, 0,
-		// 0, 0, 0, 0 };
-		for (int i = 0; i < testRolls; i++) {
-			result[0][test.rollCup() - 2]++;
-			for (int j = 1; j < result.length; j++)
-				result[j][test.getEyes(j) - 1]++;
-
-		}
-
+		result_init(result);
+		dice_Roller(test, result);
 		double[] diviation = new double[] { 0, 0, 0 };
 		for (int i = 0; i < result[0].length; i++) {
 			System.out.println(i + 2 + " was rolled: " + result[0][i] + " times, with an expectation of "
@@ -69,7 +42,7 @@ class CupTest {
 					+ Math.round(Math.abs(result[0][i] - expected_val[i] / 100 * testRolls)));
 			diviation[0] += (Math.abs(result[0][i] - expected_val[i] / 100 * testRolls));
 		}
-		System.out.println("diviation on 2ddiceSides is: " + Math.round(diviation[0] * 100) / 100 + "/"
+		System.out.println("diviation on 2d" + diceSides + " is: " + Math.round(diviation[0] * 100) / 100 + "/"
 				+ testRolls * errorRoof / 100);
 		for (int i = 0; i < diceSides; i++) {
 			System.out.println(i + 1 + " was rolled " + result[1][i] + " times by d1 with a diviation of "
@@ -83,6 +56,32 @@ class CupTest {
 
 		assertEquals(true, diviation[0] < testRolls * errorRoof / 100 && diviation[1] < testRolls / errorRoof
 				&& diviation[2] < testRolls / errorRoof);
+	}
+
+	private void dice_Roller(cdio2_game.Cup test, int[][] result) {
+		for (int i = 0; i < testRolls; i++) {
+			result[0][test.rollCup() - 2]++;
+			for (int j = 1; j < result.length; j++)
+				result[j][test.getEyes(j) - 1]++;
+		}
+	}
+
+	private void result_init(int[][] result) {
+		for (int i = 1; i < result.length; i++) {
+			result[i] = new int[diceSides];
+			for (@SuppressWarnings("unused")
+			int j : result[i]) // warning suppressed as calling the loop will initialise result [i][j] so there
+								// is no need to actually "use" j.
+				;
+
+		}
+	}
+
+	private void expected_calc(double[] expected_val) {
+		for (int i = 0; i < diceSides; i++)
+			for (int j = 0; j < diceSides; j++) {
+				expected_val[i + j] += 100 / Math.pow(diceSides, 2);
+			}
 	}
 
 }
